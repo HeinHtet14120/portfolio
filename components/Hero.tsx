@@ -5,7 +5,6 @@ import { HoverBorderGradient } from './ui/hover-border-gradient'
 import { FaLocationArrow } from 'react-icons/fa'
 import MagicButton from './ui/magicButton'
 import { GlobeDemo } from './ui/World'
-import { TypewriterEffect } from './ui/typewriter-effect'
 import { FlipWords } from './ui/flip-words'
 import React from 'react'
 

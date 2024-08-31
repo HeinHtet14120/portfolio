@@ -71,6 +71,7 @@ const config = {
           DEFAULT: "rgba(0, 255, 255, 0.5)", // Example color, adjust as needed
           gradient: "linear-gradient(135deg, rgba(0,255,255,0.5), rgba(0,0,0,0))",
         },
+        purple3: "linear-gradient(to right, rgba(128, 0, 128, 1), rgba(138, 43, 226, 1), rgba(255, 105, 180, 1))",
         purple: "#CBACF9",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
