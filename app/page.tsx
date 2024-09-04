@@ -1,6 +1,7 @@
 import { Features } from "@/components/Feature";
 import Grid from "@/components/Grid";
 import Hero from "@/components/Hero";
+import Language from "@/components/Language";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import { FaHome } from "react-icons/fa";
 
@@ -28,7 +29,9 @@ export default function Home() {
       <FloatingNav navItems={navItems}/>
       <Hero/>
       <Features/>
+      <Language/>
       <Grid/>
+      
     </main>
   );
 }

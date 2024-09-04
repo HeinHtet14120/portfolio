@@ -1,3 +1,5 @@
+
+
 export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
@@ -8,73 +10,84 @@ export const navItems = [
 export const gridItems = [
   {
     id: 1,
-    title: "Responsive Font-End Development",
-    description: "Expert in building responsive and dynamic user interfaces that work seamlessly across all devices and screen sizes.",
-    className: " col-span-2 lg:col-span-2 md:col-span-1 ",
+    title: "Apple Website",
+    description: "An iPhone 15 Pro clone replicates Apple's sleek design, animations, and 3D visuals, offering a seamless experience on all devices.",
+    className: " col-span-1 lg:col-span-1 md:col-span-1 ",
     imgClassName: "w-full h-full",
     titleClassName: "justify-end",
-    img: "/",
+    img: "/applesite.png",
     spareImg: "",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+    git: "https://github.com/HeinHtet14120/apple_website",
+    demo : "https://apple-website-heintothehtet.vercel.app"
   },
   {
     id: 2,
-    title: "I'm very flexible with time zone communications",
-    description: "",
+    title: "Real Estate",
+    description: "The RealEstate App is a property management and listing platform where users can view, list, and manage properties, with a real-time chat feature for seamless communication.",
     className: " col-span-1",
     imgClassName: "",
     titleClassName: "justify-start",
-    img: "",
+    img: "/hhestate.png",
     spareImg: "",
+    iconLists: ["/nodejs.svg", "/mongodb.svg", "/socket.svg", "/re.svg", "/sass.svg","/prisma.svg" ],
+    git: "https://github.com/HeinHtet14120/RealEstate",
+    demo : null
   },
   {
     id: 3,
-    title: "Currently building a JS Animation library",
-    description: "The Inside Scoop",
+    title: "Promptopia",
+    description: "A Next.js CRUD app with NextAuth for authentication, bcrypt for password hashing, and Google OAuth for seamless login.",
     className: " col-span-1",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
     titleClassName: "justify-center md:justify-start lg:justify-center",
-    img: "/b5.svg",
+    img: "/promptopia.png",
     spareImg: "/grid.svg",
+    iconLists: ["/next.svg", "/tail.svg", "/mongodb.svg", "/google.svg"],
+    git: "https://github.com/HeinHtet14120/Promptopia",
+    demo : "https://promptopia-heintothehtet.vercel.app"
   },
   {
     id: 4,
-    title: "Do you want to start a project together?",
-    description: "",
+    title: "AnimeBox",
+    description: "Next 14 Server Side App with Server Actions, Infinite Scroll & Framer Motion Animations",
     className: " col-span-1",
     imgClassName: "",
     titleClassName: "justify-center md:max-w-full max-w-60 text-center",
-    img: "",
+    img: "/animebox.png",
     spareImg: "",
+    techs : ["Nextjs" ,"Framer Motion" ],
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/fm.svg"],
+    git: "https://github.com/HeinHtet14120/AnimeBox",
+    demo : "https://anime-box-heintothehtet.vercel.app"
   },
   {
     id: 5,
-    title: "Do you want to start a project together?",
-    description: "",
+    title: "Library Management",
+    description: "A React Library Management App using Firebase for real-time data, with navigation, date handling, and smooth UI animations.",
     className: " col-span-1",
     imgClassName: "",
     titleClassName: "justify-center md:max-w-full max-w-60 text-center",
-    img: "",
+    img: "/librarymanagement.png",
     spareImg: "",
+    techs : ["React" ,"Firbase", "Momentjs" ],
+    iconLists: ["/re.svg", "/momentjs.svg", "/tail.svg", "/firebase.svg"],
+    git: "https://github.com/HeinHtet14120/Library_Management-react",
+    demo: "https://library-management-react-ashy.vercel.app"
   },
   {
     id: 6,
-    title: "My tech stack",
+    title: "EventApp APIs",
     description: "I constantly try to improve",
-    className: " col-span-1",
+    className: " col-span-1 ",
     imgClassName: "",
     titleClassName: "justify-center",
     img: "",
     spareImg: "",
-  },
-  {
-    id: 7,
-    title: "Tech enthusiast with a passion for development.",
-    description: "",
-    className: " col-span-2 lg:col-span-2 md:col-span-1 ",
-    imgClassName: "",
-    titleClassName: "justify-start",
-    img: "/grid.svg",
-    spareImg: "/b4.svg",
+    techs : ["Python" ,"Flask"  ],
+    iconLists: ["/python.svg", "/flask.svg"],
+    git: "https://github.com/HeinHtet14120/SocialMeidaAPI",
+    demo: null
   },
 ];
 
@@ -256,3 +269,103 @@ export const socialMedia = [
     img: "/link.svg",
   },
 ];
+
+
+export const items = [
+  {
+    id: 1,
+    name: '/firebase.svg'
+  },
+  {
+    id: 2,
+    name: '/nodejs.svg'
+  },
+  {
+    id: 3,
+    name: '/python.svg'
+  },
+  {
+    id: 4,
+    name: '/flask.svg'
+  },
+  {
+    id: 5,
+    name: '/re.svg'
+  },
+  {
+    id: 6,
+    name: '/ts.svg'
+  },
+  {
+    id: 7,
+    name: '/momentjs.svg'
+  },
+  {
+    id: 8,
+    name: '/fm.svg'
+  },
+  {
+    id: 9,
+    name: '/next.svg'
+  },
+  {
+    id: 10,
+    name: '/git.svg'
+  },
+  {
+    id: 11,
+    name: '/prisma.svg'
+  },
+  {
+    id: 12,
+    name: '/sass.svg'
+  },
+  {
+    id: 13,
+    name: '/socket.svg'
+  },
+  {
+    id: 14,
+    name: '/tail.svg'
+  },
+  {
+    id: 15,
+    name: '/three.svg'
+  },
+  {
+    id: 16,
+    name: '/mongodb.svg'
+  },
+  {
+    id: 17,
+    name: '/gsap.svg'
+  },
+  {
+    id: 18,
+    name: '/java.svg'
+  },
+  {
+    id: 19,
+    name: '/js.svg'
+  },
+  {
+    id: 20,
+    name: '/postman.svg'
+  },
+  {
+    id: 21,
+    name: '/django.svg'
+  },
+  {
+    id: 22,
+    name: '/mysql.svg'
+  },
+  {
+    id: 23,
+    name: '/figma.svg'
+  },
+  {
+    id: 24,
+    name: '/dock.svg'
+  }
+]

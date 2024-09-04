@@ -10,6 +10,7 @@ import {
     IconDeviceDesktop,
 } from "@tabler/icons-react";
 import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
+import { TextHoverEffect } from "./ui/text-hover-effect";
 
 export function Features() {
     const features = [
@@ -60,13 +61,19 @@ export function Features() {
         },
     ];
     return (
-        <BackgroundBeamsWithCollision className='w-screen min-h-screen relative grid items-center dark:bg-black-100 overflow-hidden'>
+        <div className=" h-full">
+            <div className=' w-full'>
+                <h2 className='w-[80%] lg:w-[100%] sm:text-center text-[50px] lg:text-[40px] md:text-[36px] sm:text-[33px] dark:text-white text-black leading-snug tracking-wide font-bold text-center mx-auto py-10'>
+                    What I bring to the <span className=' text-neutral-400'>Table</span>
+                </h2>
+            </div>
             <div className="grid grid-cols-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-10 mx-5">
                 {features.map((feature, index) => (
                     <Feature key={feature.title} {...feature} index={index} />
                 ))}
             </div>
-        </BackgroundBeamsWithCollision>
+        </div>
+
 
     );
 }
