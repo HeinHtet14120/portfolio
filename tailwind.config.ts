@@ -43,6 +43,9 @@ const config = {
       },
     },
     extend: {
+      backgroundSize: {
+        'small-grid': '30px 30px', // Adjust the size as needed
+      },
       
       colors: {
         black: {
