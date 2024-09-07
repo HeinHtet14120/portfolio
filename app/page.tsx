@@ -1,3 +1,4 @@
+import Contact from "@/components/Contact";
 import { Features } from "@/components/Feature";
 import Grid from "@/components/Grid";
 import Hero from "@/components/Hero";
@@ -31,6 +32,7 @@ export default function Home() {
       <Features/>
       <Language/>
       <Grid/>
+      <Contact/>
       
     </main>
   );
