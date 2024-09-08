@@ -44,7 +44,7 @@ export function ContactForm() {
         alert('Failed to send email.');
       }
     } catch (error) {
-      
+      console.log(error)
     }
 
   };
