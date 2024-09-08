@@ -10,8 +10,8 @@ const Grid = () => {
         <div >
             {/* <BackgroundBeamsWithCollision className='w-screen min-h-screen relative dark:bg-black-100 overflow-hidden'> */}
                 <div className=' w-full'>
-                    <h2 className='w-[80%] lg:w-[100%] sm:text-center text-[50px] lg:text-[40px] md:text-[36px] sm:text-[33px] dark:text-white text-black leading-snug tracking-wide font-bold text-center mx-auto py-10'>
-                        Developed by <span className=' text-neutral-400'>ME</span>
+                    <h2 className='w-[80%] lg:w-[100%] sm:text-center text-[45px] lg:text-[40px] md:text-[36px] sm:text-[33px] bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 leading-snug tracking-wide font-bold text-center mx-auto py-10'>
+                        Developed by ME
                     </h2>
                 </div>
 

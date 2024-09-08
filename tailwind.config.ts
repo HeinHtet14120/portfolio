@@ -3,6 +3,7 @@ import type { Config } from "tailwindcss";
 import svgToDataUri from "mini-svg-data-uri";
 
 import colors from "tailwindcss/colors";
+import { Silkscreen } from "next/font/google";
 
 const {
   default: flattenColorPalette,
@@ -43,11 +44,22 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        rambla: ['Rambla', 'sans-serif'],
+        quantico: [ 'Quantico', 'sans-serif'],
+        silkscreen: ['Silkscreen', 'sans-serif'],
+        saira: ['Saira', 'sans-serif'],
+        mulish: ["Mulish", 'sans-serif'],
+        yantramanav: ["Yantramanav", 'sans-serif'],
+        righteous: ["Righteous", 'sans-serif'],
+        paytone: ["Paytone One", 'sans-serif']
+      },
       backgroundSize: {
         'small-grid': '30px 30px', // Adjust the size as needed
       },
       
       colors: {
+        'custom-red': '#F30A49',
         black: {
           DEFAULT: "#000",
           100: "#000319",

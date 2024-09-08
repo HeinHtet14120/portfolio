@@ -38,14 +38,14 @@ const HeroNew = () => {
               as="button"
               className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
             >
-              <span className='text-sm md:text-xs sm:text-xs'>Hein Htet, Full-Stack Developer.</span>
+              <span className='text-sm md:text-xs sm:text-xs font-silkscreen'>Hein Htet, Full-Stack Developer.</span>
             </HoverBorderGradient>
           </h2>
-          <TextGenerateEffect className=' w-[80%] lg:w-[100%] text-pretty pb-5 sm:text-center text-[50px] lg:text-[40px] md:text-[36px] sm:text-[33px]' words={'In the world of development, possibilities are limitless.'} />
-          <div className="w-[80%] sm:w-[100%] items-start h-20 lg:h-28 md:h-32 sm:h-20 leading-8 text-[18px] lg:text-[16px] md:text-[15px] text-left sm:text-center mb-5 font-normal text-neutral-600 dark:text-neutral-400">
-            With expertise in full stack development, I build <FlipWords words={words} className=' px-0' /> websites that deliver exceptional user experiences.
+          <TextGenerateEffect className=' w-[80%] lg:w-[100%] font-righteous text-pretty pb-5 sm:text-center text-[50px] lg:text-[40px] md:text-[36px] sm:text-[33px] ' words={'In the world of development, possibilities are limitless.'} />
+          <div className="w-[80%] sm:w-[100%] items-start h-26 lg:h-56 md:h-56 sm:h-44 leading-8 text-[18px] lg:text-[16px] md:text-[15px] text-left sm:text-center mb-5 font-normal text-neutral-600 dark:text-neutral-400">
+            With expertise in full stack development, I build <FlipWords words={words} className=' px-0' /> websites that deliver exceptional user experiences. I’m currently studying Computer Science at Rangsit University, building a strong foundation in technology and software development.
           </div>
-          <a href="#about" >
+          <a href="#project" >
             <MagicButton title="Show my work"
               icon={<FaLocationArrow />}
               position='right' />

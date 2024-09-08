@@ -62,9 +62,10 @@ export function Features() {
     ];
     return (
         <div className=" h-full">
+            
             <div className=' w-full'>
-                <h2 className='w-[80%] lg:w-[100%] sm:text-center text-[50px] lg:text-[40px] md:text-[36px] sm:text-[33px] dark:text-white text-black leading-snug tracking-wide font-bold text-center mx-auto py-10'>
-                    What I bring to the <span className=' text-neutral-400'>Table</span>
+                <h2 className='w-[80%] lg:w-[100%] sm:text-center text-[45px] lg:text-[40px] md:text-[36px] sm:text-[33px] bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 leading-snug tracking-wide font-bold text-center mx-auto py-10'>
+                    What I bring to the Table
                 </h2>
             </div>
             <div className="grid grid-cols-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-10 mx-5">
