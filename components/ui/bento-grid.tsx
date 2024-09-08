@@ -111,7 +111,7 @@ export const BentoGridItem = ({
             <div className="font-sans font-bold text-[25px] md:text-[23px] sm:text-[22px] text-neutral-600 dark:text-neutral-200 mb-2 mt-2">
               {title}
             </div>
-            <div className="font-sans font-normal text-[17px] md:text-[16px] sm:text-[16px] text-left my-4 text-bet text-neutral-600 dark:text-neutral-300">
+            <div className="font-sans font-normal text-[17px] md:text-[16px] sm:text-[16px] text-left my-4 text-bet text-neutral-600 dark:text-neutral-400">
               {description}
             </div>
             <div className=" w-full flex justify-between items-center">

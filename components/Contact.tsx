@@ -1,6 +1,6 @@
 import React from 'react'
 import { ContactForm } from './Contact-form'
-import { IconBrandInstagram, IconMail, IconBrandFacebook, IconBrandWhatsapp, IconBrandX, IconBrandGithub } from '@tabler/icons-react';
+import { IconBrandInstagram, IconMail, IconBrandLinkedin, IconBrandWhatsapp, IconBrandX, IconBrandGithub } from '@tabler/icons-react';
 import { FloatingDock } from './ui/floating-dock';
 
 const Contact = () => {
@@ -13,18 +13,13 @@ const Contact = () => {
           ),
           href: "mailto:heinhtet14120@gmail.com?subject=Hello%20There&body=I'm%20interested%20in%20your%20services.",
         },
-        // {
-        //   title: "Aceternity UI",
-        //   icon: (
-        //     <Image
-        //       src="https://assets.aceternity.com/logo-dark.png"
-        //       width={20}
-        //       height={20}
-        //       alt="Aceternity Logo"
-        //     />
-        //   ),
-        //   href: "#",
-        // },
+        {
+            title: "Linkedin",
+            icon: (
+              <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+            ),
+            href: "https://www.linkedin.com/in/heintothehtet/",
+          },
         {
           title: "Whatsapp",
           icon: (
@@ -51,7 +46,7 @@ const Contact = () => {
     return (
         <>
             <div className=' w-full h-auto my-16 flex md:flex-col sm:flex-col items-center dark:bg-black-100 dark:bg-grid-neutral-200/[0.2] bg-grid-black/[0.2] bg-small-grid relative'>
-                <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_5%,black)]"></div>
+                <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
                 <div className=' w-[50%] md:w-full sm:w-full text-center md:mb-5 sm:mb-5'>
                     <div className=' w-full '>
                         <h1 className=' w-[80%] text-left pl-7 sm:w-[70%] sm:text-center sm:pl-0 sm:mx-auto md:mx-auto lg:text-left text-5xl lg:text-4xl md:text-3xl sm:text-3xl mb-3 text-neutral-200 font-extrabold leading-snug sm:leading-10 sm:my-8'>Ready to Bring Your Ideas to Life?</h1>
