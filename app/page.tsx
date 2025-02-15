@@ -1,36 +1,33 @@
-import Contact from "@/components/Contact";
-import { Features } from "@/components/Feature";
-import Footer from "@/components/Footer";
-import Grid from "@/components/Grid";
-import Hero from "@/components/Hero";
-import Language from "@/components/Language";
-import { FloatingNav } from "@/components/ui/floating-navbar";
-import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
+import Contact from '@/components/Contact';
+import { Experiences } from '@/components/Experiences';
+import { Features } from '@/components/Feature';
+import Footer from '@/components/Footer';
+import Grid from '@/components/Grid';
+import Hero from '@/components/Hero';
+import Language from '@/components/Language';
+import { FloatingNav } from '@/components/ui/floating-navbar';
+import { IconHome, IconMessage, IconUser } from '@tabler/icons-react';
 
 const navItems = [
   {
-    name: "Home",
-    link: "#home",
+    name: 'Home',
+    link: '#home',
     icon: <IconHome />,
   },
   {
-    name: "About",
-    link: "#about",
+    name: 'About',
+    link: '#about',
     icon: <IconUser />,
   },
   {
-    name: "Projects",
-    link: "#project",
-    icon: (
-      <IconMessage />
-    ),
+    name: 'Projects',
+    link: '#project',
+    icon: <IconMessage />,
   },
   {
-    name: "Contact",
-    link: "#contact",
-    icon: (
-      <IconMessage />
-    ),
+    name: 'Contact',
+    link: '#contact',
+    icon: <IconMessage />,
   },
 ];
 
@@ -44,15 +41,17 @@ export default function Home() {
       <section id="about">
         <Features />
       </section>
-      <Language/>
+      <Language />
       <section id="project">
         <Grid />
+      </section>
+      <section id="experience">
+        <Experiences />
       </section>
       <section id="contact">
         <Contact />
       </section>
       <Footer />
-
     </main>
   );
 }

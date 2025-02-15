@@ -1,8 +1,8 @@
-"use client";
-import { useMotionValue } from "framer-motion";
-import React, { useState, useEffect } from "react";
-import { useMotionTemplate, motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+'use client';
+import { useMotionValue } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { useMotionTemplate, motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
 export const EvervaultCard = ({
   text,
@@ -14,7 +14,7 @@ export const EvervaultCard = ({
   let mouseX = useMotionValue(0);
   let mouseY = useMotionValue(0);
 
-  const [randomString, setRandomString] = useState("");
+  const [randomString, setRandomString] = useState('');
 
   useEffect(() => {
     let str = generateRandomString(1500);
@@ -33,7 +33,7 @@ export const EvervaultCard = ({
   return (
     <div
       className={cn(
-        "p-0.5  bg-transparent aspect-square  flex items-center justify-center w-full h-60 ",
+        'p-0.5  bg-transparent aspect-square  flex items-center justify-center w-full h-60 ',
         className
       )}
     >
@@ -49,7 +49,9 @@ export const EvervaultCard = ({
         <div className="relative z-10 flex items-center justify-center">
           <div className="relative h-40 w-44  rounded-full flex items-center justify-center text-white font-bold text-4xl">
             <div className="absolute w-full h-full dark:bg-black/[0.9] opacity-[0.8] blur-sm rounded-full" />
-            <span className="dark:text-neutral-400 z-20 ml-4 hover:text-white">{text}</span>
+            <span className="dark:text-neutral-400 z-20 ml-4 hover:text-white">
+              {text}
+            </span>
           </div>
         </div>
       </div>
@@ -80,10 +82,9 @@ export function CardPattern({ mouseX, mouseY, randomString }: any) {
   );
 }
 
-const characters =
-  "SGVsbG8sIFdvcmxkIQ";
+const characters = 'SGVsbG8sIFdvcmxkIQ';
 export const generateRandomString = (length: number) => {
-  let result = "";
+  let result = '';
   for (let i = 0; i < length; i++) {
     result += characters.charAt(Math.floor(Math.random() * characters.length));
   }

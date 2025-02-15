@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import React, { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import React, { useEffect, useRef, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
 export const GlowingStarsBackgroundCard = ({
   className,
@@ -22,7 +22,7 @@ export const GlowingStarsBackgroundCard = ({
         setMouseEnter(false);
       }}
       className={cn(
-        "bg-[linear-gradient(110deg,#333_0.6%,#222)] p-4 max-w-md max-h-[20rem] h-full w-full rounded-xl border border-[#eaeaea] dark:border-neutral-600",
+        'bg-[linear-gradient(110deg,#333_0.6%,#222)] p-4 max-w-md max-h-[20rem] h-full w-full rounded-xl border border-[#eaeaea] dark:border-neutral-600',
         className
       )}
     >
@@ -42,7 +42,7 @@ export const GlowingStarsDescription = ({
   children?: React.ReactNode;
 }) => {
   return (
-    <p className={cn("text-base text-white max-w-[16rem]", className)}>
+    <p className={cn('text-base text-white max-w-[16rem]', className)}>
       {children}
     </p>
   );
@@ -56,7 +56,7 @@ export const GlowingStarsTitle = ({
   children?: React.ReactNode;
 }) => {
   return (
-    <h2 className={cn("font-bold text-2xl text-[#eaeaea]", className)}>
+    <h2 className={cn('font-bold text-2xl text-[#eaeaea]', className)}>
       {children}
     </h2>
   );
@@ -85,7 +85,7 @@ export const Illustration = ({ mouseEnter }: { mouseEnter: boolean }) => {
     <div
       className="h-48 p-1 w-full"
       style={{
-        display: "grid",
+        display: 'grid',
         gridTemplateColumns: `repeat(${columns}, 1fr)`,
         gap: `1px`,
       }}
@@ -123,14 +123,14 @@ const Star = ({ isGlowing, delay }: { isGlowing: boolean; delay: number }) => {
       }}
       animate={{
         scale: isGlowing ? [1, 1.2, 2.5, 2.2, 1.5] : 1,
-        background: isGlowing ? "#fff" : "#666",
+        background: isGlowing ? '#fff' : '#666',
       }}
       transition={{
         duration: 2,
-        ease: "easeInOut",
+        ease: 'easeInOut',
         delay: delay,
       }}
-      className={cn("bg-[#666] h-[1px] w-[1px] rounded-full relative z-20")}
+      className={cn('bg-[#666] h-[1px] w-[1px] rounded-full relative z-20')}
     ></motion.div>
   );
 };
@@ -146,7 +146,7 @@ const Glow = ({ delay }: { delay: number }) => {
       }}
       transition={{
         duration: 2,
-        ease: "easeInOut",
+        ease: 'easeInOut',
         delay: delay,
       }}
       exit={{

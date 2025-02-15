@@ -1,11 +1,10 @@
-"use client";
-import React, { useState } from "react";
-import { Label } from "./ui/label";
-import { Input } from "./ui/input";
-import { cn } from "@/lib/utils";
+'use client';
+import React, { useState } from 'react';
+import { Label } from './ui/label';
+import { Input } from './ui/input';
+import { cn } from '@/lib/utils';
 
 export function ContactForm() {
-
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -31,22 +30,21 @@ export function ContactForm() {
         body: JSON.stringify({
           name: name,
           email: email,
-          message: message
-        })
-      })
+          message: message,
+        }),
+      });
 
       if (response.ok) {
-        alert('Email sent successfully!')
-        setName('')
-        setEmail('')
-        setMessage('')
+        alert('Email sent successfully!');
+        setName('');
+        setEmail('');
+        setMessage('');
       } else {
         alert('Failed to send email.');
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-
   };
   return (
     <div className="max-w-md w-full lg:w-[80%] md:w-[80%] sm:w-[80%] mx-auto rounded-2xl md:rounded-2xl p-7 md:p-8 shadow-input bg-white dark:bg-black border border-neutral-500">
@@ -60,15 +58,24 @@ export function ContactForm() {
       <form className="my-8" onSubmit={handleSubmit}>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="name">Your name</Label>
-          <Input id="name" name="name" placeholder="Tyler" type="text"
+          <Input
+            id="name"
+            name="name"
+            placeholder="Tyler"
+            type="text"
             value={name}
-            onChange={(e) => setName(e.target.value)} />
+            onChange={e => setName(e.target.value)}
+          />
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="email">Email Address</Label>
-          <Input id="email" name="email" placeholder="******@gmail.com" type="email"
+          <Input
+            id="email"
+            name="email"
+            placeholder="******@gmail.com"
+            type="email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={e => setEmail(e.target.value)}
           />
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
@@ -85,8 +92,7 @@ export function ContactForm() {
             maxLength={100}
             placeholder="Your message"
             value={message}
-            onChange={(e) => setMessage(e.target.value)}
-
+            onChange={e => setMessage(e.target.value)}
             required
           />
         </LabelInputContainer>
@@ -98,7 +104,6 @@ export function ContactForm() {
           Send &rarr;
           <BottomGradient />
         </button>
-
       </form>
     </div>
   );
@@ -121,7 +126,7 @@ const LabelInputContainer = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("flex flex-col space-y-2 w-full", className)}>
+    <div className={cn('flex flex-col space-y-2 w-full', className)}>
       {children}
     </div>
   );
