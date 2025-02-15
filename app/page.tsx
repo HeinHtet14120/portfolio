@@ -6,7 +6,12 @@ import Grid from '@/components/Grid';
 import Hero from '@/components/Hero';
 import Language from '@/components/Language';
 import { FloatingNav } from '@/components/ui/floating-navbar';
-import { IconHome, IconMessage, IconUser } from '@tabler/icons-react';
+import {
+  IconBriefcase,
+  IconHome,
+  IconMessage,
+  IconUser,
+} from '@tabler/icons-react';
 
 const navItems = [
   {
@@ -23,6 +28,11 @@ const navItems = [
     name: 'Projects',
     link: '#project',
     icon: <IconMessage />,
+  },
+  {
+    name: 'Experience',
+    link: '#experience',
+    icon: <IconBriefcase />,
   },
   {
     name: 'Contact',
