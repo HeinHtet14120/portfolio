@@ -5,11 +5,12 @@ import nodemailer from 'nodemailer';
 export const POST = async (req, res) => {
   const { name, email, message } = await req.json();
 
-  let transporter = nodemailer.createTransport({
-    service: 'gmail',
+  var transport = nodemailer.createTransport({
+    host: 'sandbox.smtp.mailtrap.io',
+    port: 2525,
     auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
+      user: process.env.MAILTRAP_USER,
+      pass: process.env.MAILTRAP_PASS,
     },
   });
   // Email options
@@ -21,16 +22,15 @@ export const POST = async (req, res) => {
   };
 
   try {
-    const result = await transporter.sendMail(mailOptions);
-    console.log('This is result : ', result);
+    await transport.sendMail(mailOptions);
     return NextResponse.json(
-      { message: 'Message received successfully!' },
+      { message: 'Message sent successfully!' },
       { status: 200 }
     );
   } catch (error) {
-    console.log(error);
+    console.error('Email error:', error);
     return NextResponse.json(
-      { error: 'An error occurred while processing your request.' },
+      { error: 'Failed to send email. Please try again later.' },
       { status: 500 }
     );
   }

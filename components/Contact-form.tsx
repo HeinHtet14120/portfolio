@@ -1,51 +1,60 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Label } from './ui/label';
 import { Input } from './ui/input';
 import { cn } from '@/lib/utils';
+import { ToastAction } from '@radix-ui/react-toast';
+import { LoaderPinwheel, MailCheck, SendHorizontal } from 'lucide-react';
 
-export function ContactForm() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+export const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+  const [status, setStatus] = useState({
+    loading: false,
+    error: '',
+    success: false,
+  });
 
-  // const [formData, setFormData] = useState({
-  //   name: '',
-  //   email: '',
-  //   message: '',
-  // });
-
-  // const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-  //   setFormData({
-  //     ...formData,
-  //     [e.target.name]: e.target.value,
-  //   });
-  // };
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setStatus({ loading: true, error: '', success: false });
 
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
-        body: JSON.stringify({
-          name: name,
-          email: email,
-          message: message,
-        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
+      console.log('this is response : >>', response);
 
-      if (response.ok) {
-        alert('Email sent successfully!');
-        setName('');
-        setEmail('');
-        setMessage('');
-      } else {
-        alert('Failed to send email.');
+      if (!response.ok) {
+        throw new Error('Failed to send message');
       }
+
+      setStatus({ loading: false, error: '', success: true });
+      setFormData({ name: '', email: '', message: '' }); // Reset form
     } catch (error) {
-      console.log(error);
+      setStatus({
+        loading: false,
+        error: 'Failed to send message',
+        success: false,
+      });
     }
   };
+
+  useEffect(() => {
+    if (status.success) {
+      setTimeout(() => {
+        setStatus({ loading: false, error: '', success: false });
+      }, 3000);
+    }
+  }, [status.success]);
+
   return (
     <div className="max-w-md w-full lg:w-[80%] md:w-[80%] sm:w-[80%] mx-auto rounded-2xl md:rounded-2xl p-7 md:p-8 shadow-input bg-white dark:bg-black border border-neutral-500">
       <h2 className="font-bold text-2xl text-neutral-200 dark:text-neutral-200">
@@ -55,7 +64,7 @@ export function ContactForm() {
         Have a question, project idea, or just want to connect?
       </p>
 
-      <form className="my-8" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="my-8">
         <LabelInputContainer className="mb-4">
           <Label htmlFor="name">Your name</Label>
           <Input
@@ -63,8 +72,9 @@ export function ContactForm() {
             name="name"
             placeholder="Tyler"
             type="text"
-            value={name}
-            onChange={e => setName(e.target.value)}
+            value={formData.name}
+            onChange={e => setFormData({ ...formData, name: e.target.value })}
+            required
           />
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
@@ -74,8 +84,9 @@ export function ContactForm() {
             name="email"
             placeholder="******@gmail.com"
             type="email"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
+            value={formData.email}
+            onChange={e => setFormData({ ...formData, email: e.target.value })}
+            required
           />
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
@@ -91,23 +102,40 @@ export function ContactForm() {
            group-hover/input:shadow-none transition duration-400"
             maxLength={100}
             placeholder="Your message"
-            value={message}
-            onChange={e => setMessage(e.target.value)}
+            value={formData.message}
+            onChange={e =>
+              setFormData({ ...formData, message: e.target.value })
+            }
             required
           />
         </LabelInputContainer>
 
-        <button
-          className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
-          type="submit"
-        >
-          Send &rarr;
-          <BottomGradient />
-        </button>
+        {status.loading ? (
+          <LoaderPinwheel className="animate-spin mx-auto pt-2 text-neutral-700 w-8 h-8" />
+        ) : status.success ? (
+          <p className="text-green-500 mt-2 text-center">
+            <MailCheck className="animate-pulse mx-auto" />
+          </p>
+        ) : status.error ? (
+          <p className="text-red-500 mt-2 text-center">{status.error}</p>
+        ) : (
+          <button
+            type="submit"
+            disabled={status.loading}
+            className="bg-gradient-to-br px-2 relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block text-sm dark:bg-zinc-800 w-fit mx-auto text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+          >
+            <div className="flex items-center justify-center gap-2">
+              Send it now
+              <SendHorizontal className="animate-pulse" />
+            </div>
+          </button>
+        )}
+
+        <BottomGradient />
       </form>
     </div>
   );
-}
+};
 
 const BottomGradient = () => {
   return (
